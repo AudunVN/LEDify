@@ -1,6 +1,12 @@
 #include <Adafruit_NeoPixel.h>
-
-// WS2812 pin
+/* 
+ * Quite simple: uses a 8 pixel long WS2812 strip mounted inside the chassis to a Digispark on an internal USB (header) port.
+ * It normally fades blue in and out along the length of the strip.
+ * When the +5V rail goes below ~3V or so, the if case switches to the "else" case and blinks white slowly. This is normally
+ * while the computer is in standby mode.
+ */
+ 
+/* WS2812 data pin */
 #define PIN            0
 #define NUMPIXELS      8
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_RGB + NEO_KHZ800);
